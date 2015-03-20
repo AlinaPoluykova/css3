@@ -1,0 +1,68 @@
+
+.picture {
+	height: 300px;
+	width: 400px;
+	float: left;
+	margin: 40px;
+	background: #999;
+	border-radius: 5px;
+	box-shadow: 0 8px 15px rgba(0,0,0,.6);
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+.picture::after {
+	content: '';
+	width: 400px;
+	height: 300px;
+	display: block;
+	background: #444;
+	position: absolute; 
+	top: 0;
+	left: 0;
+
+	background: -webkit-radial-gradient(transparent, rgba(0,0,0,.7));
+	background: -moz-radial-gradient(transparent, rgba(0,0,0,.7));
+	background: radial-gradient(transparent, rgba(0,0,0,.7));
+	transition: opacity .3s;
+}
+.picture:hover::after {
+	opacity: 0;
+}
+.transform {
+	height: 315px;
+	width: 560px;
+	margin-top: 44px;
+	border: white;
+	text-align: center;
+	line-height: 180px;
+	font-size: 25px;
+	background: #eee;
+	clear: both;
+	border: 2px dotted grey;
+	-webkit-transition: transform 4s; /* Safari */
+	transition: transform 4s;
+
+	-webkit-transform: rotate3d(1,1,1,0deg) scale(0.75);
+	-moz-transform: rotate3d(1,1,1,0deg) scale(0.75);
+	-o-transform: rotate3d(1,1,1,0deg) scale(0.75);
+	transform: rotate3d(1,1,1,0deg) scale(0.75);
+}
+.transform:hover {
+	-webkit-transform: rotate3d(1,1,1, 100deg) scale(0.75);
+	-moz-transform: rotate3d(1,1,1,100deg) scale(0.75);
+	-o-transform: rotate3d(1,1,1,100deg) scale(0.75);
+	transform: rotate3d(1,1,1,100deg) scale(0.75);
+}
+.wrapper1 {
+	-webkit-perspective: 500px;
+	-moz-perspective: 500px;
+	-o-perspective: 500px;
+	height: 400px;
+	width: 200px;
+	float: left;
+}
+#myframe {
+	width: 560px;
+	height: 315px;
+}

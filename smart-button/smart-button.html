@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Smart animated button</title>
+		<style type="text/css">
+			.button {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				display: inline-block;
+				height: 50px;
+				overflow: hidden;
+				padding: 0 2.5em;
+				position: relative;
+				background: 0 0;
+				border: none;
+				outline: 0;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 14px;
+				line-height: 50px;
+				letter-spacing: .476em;
+				color: #fe6159;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-tap-highlight-color: rgba(254,97,89,.5);
+				-webkit-transition: .15s;
+				-moz-transition: .15s;
+				-o-transition: .15s;
+				transition: .15s;
+			}
+
+			.button:before {
+					border: 2px solid #fe6159;
+			}
+
+			.button:before, .button:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+			.button .helper {
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background-image: -webkit-linear-gradient(left,#ff5e3a 0,#ff2a68 100%);
+			background-image: -moz-linear-gradient(left,#ff5e3a 0,#ff2a68 100%);
+			background-image: -o-linear-gradient(left,#ff5e3a 0,#ff2a68 100%);
+			background-image: linear-gradient(to right,#ff5e3a 0,#ff2a68 100%);
+			-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			transform: translateX(-50%) translateY(-50%) rotate(45deg)
+			}			
+			.button:after, .button .helper {
+				opacity: 0;
+				-webkit-transition: .3s;
+				-moz-transition: .3s;
+				-o-transition: .3s;
+				transition: .3s;
+			}
+			button {
+				text-decoration: none;
+				color: #fe6159;
+				-webkit-transition: .15s;
+				-moz-transition: .15s;
+				-o-transition: .15s;
+				transition: .15s;
+				background: 0 0;
+			}
+			button:-webkit-any-link {
+				color: -webkit-link;
+				text-decoration: underline;
+				cursor: auto;
+			}
+			.button:after {
+				content: attr(data-title);
+				z-index: 1;
+				color: #fff;
+			}
+			.button:hover {
+				background: #fff;
+				color: #fff;
+			}
+
+			.button:hover:after, .button:active:after, button:hover .helper, .button:active .helper {
+			opacity: 1;
+			height: 288.26px;
+			}
+
+			.helper {
+				height: 0px;
+			}
+			.helper:hover {
+					height: 288.26px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button class="button" data-title="Smart animated button"><span class="helper"></span>Smart animated button</button>
+	</body>
+</html>

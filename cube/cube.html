@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>3d cube</title>
+    <style type="text/css">
+    	.wrapper2{
+    		margin: 200px 200px;
+    	}
+		.side {
+			width: 300px;
+			height: 300px;
+			background: rgba(0,0,0,.3);
+			position: absolute;
+			background: -webkit-radial-gradient(rgba(0,0,0,.1),rgba(0,0,0,.5));
+			border: 10px solid #fff;
+			border-radius: 10px;
+			font-size: 5em;
+			color: #fff;
+			line-height: 300px;
+			text-align: center;
+			text-shadow: 0 1px 3px rgba(0,0,0,.4);
+			box-shadow: 0 0 6px rgba(0,0,0,.5);
+			transform-origin: 50% 50% -150px;
+		}
+		.cube {
+			position: relative;
+			width: 300px;
+			height: 300px;
+			transform-origin: 50% 50% -150px;
+			transform: rotate3d(1,1,1,50deg);
+			transform-style: preserve-3d;
+
+		}
+		#side2 {
+			transform: rotateY(90deg);
+		}
+		#side3 {
+			transform: rotateY(-90deg);
+		}
+		#side4 {
+			transform: rotateX(90deg);
+		}
+		#side5 {
+			transform: rotateX(-90deg);
+		}
+		#side6 {
+			transform: rotateY(180deg);
+		}
+    </style>
+</head>
+<body>
+	
+	<div class="wrapper2">
+		<div class="cube">
+			<div class="side" id="side1">1</div>
+			<div class="side" id="side2">2</div>
+			<div class="side" id="side3">3</div>
+			<div class="side" id="side4">4</div>
+			<div class="side" id="side5">5</div>
+			<div class="side" id="side6">6</div>
+		</div>
+
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$(document).mousemove(function(e){
+				// console.log(e);
+				$('.cube').css({
+					'transform':'rotateX('+e.pageY+'deg) rotateY('+e.pageX+'deg)'
+				});
+			});
+		});
+	</script>
+</body>
+</html>

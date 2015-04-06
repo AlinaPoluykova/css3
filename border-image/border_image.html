@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>CSS3 practice: border-image</title>
+		<style type="text/css">
+			.frame {
+				font-size: 1.3em;
+				height: 5em;
+				width: 10em;
+				border-style: solid;
+				border-width: 1.2em;
+				-moz-border-image: url(http://www.w3.org/TR/css3-background/border.png) 30 30 30 30 stretch;
+				-webkit-border-image: url(http://www.w3.org/TR/css3-background/border.png) 30 30 30 30 stretch;
+				-o-border-image: url(http://www.w3.org/TR/css3-background/border.png) 30 30 30 30 stretch;
+				border-image: url(http://www.w3.org/TR/css3-background/border.png) 30 30 30 30 fill stretch;
+				text-align: center;
+				padding-top: 3%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="frame">
+			Heey, <br><br>That's a border image!
+		</div>
+	</body>
+</html>
